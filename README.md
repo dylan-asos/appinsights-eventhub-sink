@@ -44,7 +44,7 @@ Timespan that represents how often the Flush will send data to Event Hubs.
 
 ### Add to Processor Chain
 
-Add the **EventHubsSink** to the **TelemetryProcessorChainBuilder* for the active Telemetry configuration
+Add the **EventHubsSink** to the **TelemetryProcessorChainBuilder** for the active Telemetry configuration
 
 ```csharp
 var config = TelemetryConfiguration.Active;
@@ -53,3 +53,5 @@ var builder = config.TelemetryProcessorChainBuilder;
 
 builder.Use((next) => new EventHubsSink(eventHubSinkSettings, next)).Build();
 ```
+
+Based on the values you have specified for **BatchBufferSettings**, telemetry data is now sent to EventHub as well as your application insights resource
