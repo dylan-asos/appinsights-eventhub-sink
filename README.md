@@ -27,19 +27,19 @@ The name of the key you have created on the event hub. The key must have Send pe
 ##### AccessKey
 The access key value associated with the KeyName.
 
-#####EventHubUri
+##### EventHubUri
 The full URI to the event hub, in the format https://**eventhub-namespace**.servicebus.windows.net/**event-hub-name**
 
-#####BatchBufferSettings
+##### BatchBufferSettings
 The settings to use when buffering events created by application insights, before they are transmitted to EventHub
 
-#####MaxBacklog
+##### MaxBacklog
 Maximum amount of items in the buffer, when reached they will be flushed
 
-#####MaxWindowCount
+##### MaxWindowCount
 Maximum amount of items in any one batch
 
-#####BatchFlushInterval
+##### BatchFlushInterval
 Timespan that represents how often the Flush will send data to Event Hubs.
 
 ### Add to Processor Chain
