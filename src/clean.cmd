@@ -3,6 +3,3 @@ for /d /r . %%d in (bin,obj) do @if exist "%%d" rd /s/q "%%d"
 
 echo "Cleaning packages"
 rd /s/q "packages"
-
-echo "Cleaning .vs caches"
-rd /s /q ".vs\Asos.Customer.Api"
