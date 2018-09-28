@@ -31,6 +31,19 @@ namespace AppInsights.EventHub.Sink.NetFramework.Telemetry.Sink
                 // do exception logging
             }
         }
+        
+        protected override bool Filter(ITelemetry item)
+        {
+            if (item is DependencyTelemetry dependencyData)
+            {
+                if (dependencyData.Target.Contains(_eventHubSettings.EventHubUri.Host))
+                {
+                    return true;
+                }
+            }
+
+            return base.Filter(item);
+        }  
 
         protected async Task PublishToEventHub(ICollection<ITelemetry> events)
         {
